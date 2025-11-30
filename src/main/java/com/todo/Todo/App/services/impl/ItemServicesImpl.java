@@ -8,6 +8,8 @@ import com.todo.Todo.App.repository.ItemRepository;
 import com.todo.Todo.App.services.ItemServices;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ItemServicesImpl implements ItemServices {
 
@@ -22,6 +24,11 @@ public class ItemServicesImpl implements ItemServices {
         Item item = ItemMapper.toEntity(dto);
         itemRepository.save(item);
         return ItemMapper.toDto(item);
+    }
+
+    @Override
+    public List<ItemResponseDto> getAllItems() {
+        return itemRepository.findAllByOrderByDateCreatedDesc().stream().map(ItemMapper::toDto).toList();
     }
 
 }
