@@ -6,7 +6,9 @@ import com.todo.Todo.App.entity.Item;
 import com.todo.Todo.App.mapper.ItemMapper;
 import com.todo.Todo.App.repository.ItemRepository;
 import com.todo.Todo.App.services.ItemServices;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ItemServicesImpl implements ItemServices {
 
     private final ItemRepository itemRepository;
