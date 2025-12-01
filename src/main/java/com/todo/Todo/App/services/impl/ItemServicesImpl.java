@@ -38,5 +38,19 @@ public class ItemServicesImpl implements ItemServices {
         itemRepository.delete(item);
     }
 
+    @Override
+    public ItemResponseDto updateItem(Long id, ItemRequestDto item) {
+        Item existingItem = itemRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Book not found " + id));
+
+        ItemMapper.updateItem(existingItem, item);
+
+        itemRepository.save(existingItem);
+
+        return ItemMapper.toDto(existingItem);
+
+
+    }
+
 
 }

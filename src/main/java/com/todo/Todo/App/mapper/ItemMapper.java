@@ -24,4 +24,9 @@ public class ItemMapper {
         return dto;
     }
 
+    public static void updateItem(Item entity, ItemRequestDto dto) {
+        if (dto.getTaskTitle() != null) entity.setTaskTitle(dto.getTaskTitle());
+        if (dto.getTaskDescription() != null) entity.setTaskDescription(dto.getTaskDescription());
+    }
+
 }

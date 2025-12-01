@@ -13,4 +13,6 @@ public interface ItemServices {
 
     void deleteItem(Long id);
 
+    ItemResponseDto updateItem(Long id, ItemRequestDto item);
+
 }
