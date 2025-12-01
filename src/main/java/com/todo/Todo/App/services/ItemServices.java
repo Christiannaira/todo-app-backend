@@ -15,4 +15,6 @@ public interface ItemServices {
 
     ItemResponseDto updateItem(Long id, ItemRequestDto item);
 
+    ItemResponseDto getItemById(Long id);
+
 }

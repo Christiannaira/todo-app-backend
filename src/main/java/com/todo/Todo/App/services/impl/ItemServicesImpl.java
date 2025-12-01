@@ -52,5 +52,11 @@ public class ItemServicesImpl implements ItemServices {
 
     }
 
+    @Override
+    public ItemResponseDto getItemById(Long id) {
+        Item item = itemRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User not found with id"));
+        return ItemMapper.toDto(item);
+    }
+
 
 }
