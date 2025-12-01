@@ -28,7 +28,7 @@ public class ItemServicesImpl implements ItemServices {
 
     @Override
     public List<ItemResponseDto> getAllItems() {
-        return itemRepository.findAllByOrderByDateCreatedDesc().stream().map(ItemMapper::toDto).toList();
+        return itemRepository.findAllByOrderByCreatedAtDesc().stream().map(ItemMapper::toDto).toList();
     }
 
 }
