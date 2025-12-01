@@ -31,4 +31,10 @@ public class ItemServicesImpl implements ItemServices {
         return itemRepository.findAllByOrderByCreatedAtDesc().stream().map(ItemMapper::toDto).toList();
     }
 
+    @Override
+    public void deleteItem(Long id) {
+//        Item item = itemRepository.findById(id);
+    }
+
+
 }

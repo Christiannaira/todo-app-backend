@@ -11,4 +11,6 @@ public interface ItemServices {
 
     List<ItemResponseDto> getAllItems();
 
+    void deleteItem(Long id);
+
 }
