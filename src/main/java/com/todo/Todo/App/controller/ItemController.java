@@ -21,16 +21,27 @@ public class ItemController {
         this.itemServices = itemServices;
     }
 
+    // adding an item
     @PostMapping
     public ResponseEntity<ItemResponseDto> addItem(@RequestBody ItemRequestDto item){
         ItemResponseDto addItem = itemServices.addItem(item);
         return ResponseEntity.ok(addItem);
     }
 
+    // getting all items
     @GetMapping
     public ResponseEntity<List<ItemResponseDto>> getAllItems(){
         return ResponseEntity.ok(itemServices.getAllItems());
     }
+
+    // deleting an item
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteItem(@PathVariable Long id){
+        itemServices.deleteItem(id);
+        return ResponseEntity.noContent().build();
+    }
+
+
 
 
 
